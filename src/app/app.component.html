@@ -1,0 +1,321 @@
+<h2>{{title}}</h2>
+<div class="card-deck">
+  <div (click)="open(0)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[0].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 0)">
+        <h3 class="error" *ngIf="allWeatherData[0].errorMessage">{{allWeatherData[0].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[0].name">
+      <div *ngIf="allWeatherData[0].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[0].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[0].clouds && !allWeatherData[0].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[0].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[0].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[0].temp_min}} / {{allWeatherData[0].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[0].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[0].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[0].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[0].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(0)">Edit</a></div>
+      </div>
+  </div>
+  <div (click)="open(1)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[1].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 1)">
+        <h3 class="error" *ngIf="allWeatherData[1].errorMessage">{{allWeatherData[1].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[1].name">
+      <div *ngIf="allWeatherData[1].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[1].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[1].clouds && !allWeatherData[1].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[1].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[1].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[1].temp_min}} / {{allWeatherData[1].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[1].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[1].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[1].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[1].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(1)">Edit</a></div>
+      </div>
+  </div>
+  <div (click)="open(2)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[2].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 2)">
+        <h3 class="error" *ngIf="allWeatherData[2].errorMessage">{{allWeatherData[2].errorMessage }}</h3>
+        <p>
+           <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[2].name">
+      <div *ngIf="allWeatherData[2].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[2].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[2].clouds && !allWeatherData[2].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[2].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[2].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[2].temp_min}} / {{allWeatherData[2].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[2].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[2].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[2].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[2].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(2)">Edit</a></div>
+      </div>
+  </div>
+</div>
+<div class="card-deck">
+  <div (click)="open(3)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[3].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 3)">
+        <h3 class="error" *ngIf="allWeatherData[3].errorMessage">{{allWeatherData[3].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[3].name">
+      <div *ngIf="allWeatherData[3].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[3].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[3].clouds && !allWeatherData[3].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[3].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+      <div class="weatherdatarow lg" >{{allWeatherData[3].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[3].temp_min}} / {{allWeatherData[3].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[3].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[3].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[3].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[3].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(3)">Edit</a></div>
+      </div>
+  </div>
+  <div (click)="open(4)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[4].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 4)">
+        <h3 class="error" *ngIf="allWeatherData[4].errorMessage">{{allWeatherData[4].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[4].name">
+      <div *ngIf="allWeatherData[4].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[4].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[4].clouds && !allWeatherData[4].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[4].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[4].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[4].temp_min}} / {{allWeatherData[4].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[4].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[4].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[4].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[4].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(4)">Edit</a></div>
+      </div>
+  </div>
+  <div (click)="open(5)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[5].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 5)">
+        <h3 class="error" *ngIf="allWeatherData[5].errorMessage">{{allWeatherData[5].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[5].name">
+      <div *ngIf="allWeatherData[5].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[5].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[5].clouds && !allWeatherData[5].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[5].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+      <div class="weatherdatarow lg" >{{allWeatherData[5].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[5].temp_min}} / {{allWeatherData[5].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[5].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[5].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[5].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[5].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(5)">Edit</a></div>
+      </div>
+  </div>
+</div>
+<div class="card-deck">
+  <div (click)="open(6)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[6].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 6)">
+        <h3 class="error" *ngIf="allWeatherData[6].errorMessage">{{allWeatherData[6].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[6].name">
+      <div *ngIf="allWeatherData[6].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[6].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[6].clouds && !allWeatherData[6].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[6].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[6].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[6].temp_min}} / {{allWeatherData[6].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[6].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[6].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[6].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[6].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(6)">Edit</a></div>
+      </div>
+  </div>
+  <div (click)="open(7)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[7].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 7)">
+        <h3 class="error" *ngIf="allWeatherData[7].errorMessage">{{allWeatherData[7].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[7].name">
+      <div *ngIf="allWeatherData[7].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[7].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[7].clouds && !allWeatherData[7].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[7].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-rain rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[7].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[7].temp_min}} / {{allWeatherData[7].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[7].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[7].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[7].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[7].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(7)">Edit</a></div>
+      </div>
+  </div>
+  <div (click)="open(8)" class="card col-sm">
+    <div class="form" *ngIf="allWeatherData[8].showCityForm == true">
+      <form id="inputForm" #inputForm="ngForm" (ngSubmit)="onSubmit(city.value, 8)">
+        <h3 class="error" *ngIf="allWeatherData[8].errorMessage">{{allWeatherData[8].errorMessage }}</h3>
+        <p>
+          <input type="text" name="city" placeholder="Enter City Name"  #city="ngModel" ngModel required>
+        </p>
+        <p>
+          <button type="submit"  [disabled]="!inputForm.valid" class="btn btn-success">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div *ngIf="allWeatherData[8].name">
+      <div *ngIf="allWeatherData[8].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
+      <div *ngIf="!allWeatherData[8].isDay" class="weatherdatarow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
+      <div *ngIf="allWeatherData[8].clouds && !allWeatherData[8].rain" class="weatherdatarow clouds">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+      </div>
+      <div *ngIf="allWeatherData[8].rain" class="weatherdatarow rains">
+        <i class="fas fa-3x fa-cloud-showers-heavy rain"></i>
+      </div>
+
+      <div class="weatherdatarow lg" >{{allWeatherData[8].temp_celcius}}</div>
+      <div class="weatherdatarow md" >{{allWeatherData[8].temp_min}} / {{allWeatherData[8].temp_max}}</div>
+      <div class="weatherdatarow md" >Feels Like: {{allWeatherData[8].temp_celcius}}</div>
+      <div class="weatherdatarow sc">City: {{allWeatherData[8].name}}</div>
+      <div class="weatherdatarow md">Humidity: {{allWeatherData[8].main.humidity}}%</div>
+      <div class="weatherdatarow md" >Pressure: {{allWeatherData[8].main.pressure}}mb</div>
+      <div><a href="#inputForm" class="btn btn-primary" (click)="hide(8)">Edit</a></div>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

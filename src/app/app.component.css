@@ -1,0 +1,257 @@
+h2{
+  text-align: center;
+  color: blueviolet;
+}
+
+
+.card-deck{
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  margin: 10px;
+}
+
+.card{
+  /* display: block; */
+  border-radius: 10px;
+  width: 200px;
+  height: 400px;
+  color: black;
+  padding: 5px;
+  margin: 2px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card:hover{
+  box-shadow: 5px -2px 5px 0px rgba(87, 197, 133, 0.61);
+}
+
+.weatherdatarow{
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.sun{
+  margin-top: 10px;
+  color: yellow;
+  filter: drop-shadow(1px 1px 10px yellow);
+}
+
+.moon{
+  margin-top: 10px;
+  color: whitesmoke;
+  filter: drop-shadow(1px 1px 10px whitesmoke);
+}
+
+.clouds{
+  margin-top: -30px;
+}
+
+.cloud{
+  color: lightblue;
+  filter: drop-shadow(1px 1px 5px lightblue);
+  animation: cloudMovement 5s ease-in-out infinite alternate;
+}
+
+@keyframes cloudMovement{
+  from{
+    margin-left: -55px;
+  }
+  to{
+    margin-left: 65px;
+  }
+}
+.rains{
+  margin-top: -30px;
+}
+
+.rain{
+  color: lightblue;
+  filter: drop-shadow(1px 1px 5px lightblue);
+  animation: cloudMovement 5s ease-in-out infinite alternate;
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+
+.form input{
+  text-align: center;
+  border-radius: 10px;
+  background-color: oldlace;
+  color: black;
+  font-size: medium;
+  width: 160px;
+}
+
+.form button{
+  border-radius: 10px;
+  font-size: medium;
+}
+
+.form p{
+  width: fit-content;
+  margin: auto;
+  padding: 5px;
+}
+
+.lg{
+  font-size: 32px;
+  margin-top: 5px;
+}
+
+.md{
+  font-size: 20px
+}
+
+.sc{
+  font-size: 20px; margin-top: 10px;
+}
+
+.btn{
+  border-radius: 10px;
+  font-size: medium;
+  width: 100%;
+  margin: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px){
+    .card-deck{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      /* justify-content: center; */
+      padding: 5px;
+      margin: 16px;
+      width:300px;
+      height: 350px;
+    }
+    .sc{
+     font-size: 20px;
+     font-weight: bold;
+    }
+
+    .form{
+     align-items: center;
+     justify-content: center;
+     }
+
+     .form input{
+      font-size: medium;
+      margin-left: 25px;
+      width: 225px;
+      height: 33px;
+      margin-right: 25px;
+     }
+     .form button{
+     font-size: medium;
+     margin-right: 20px;
+     }
+
+     .btn{
+       height: 35px;
+     }
+}
+
+@media screen
+  and (min-device-width: 360px)
+  and (max-device-height: 640px) {
+    .card-deck{
+      /* flex-direction: column; */
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      /* justify-content: center; */
+      padding: 5px;
+      margin: 16px;
+      width:300px;
+      height: 350px;
+    }
+    .sc{
+     font-size: 17px;
+     font-weight: bold;
+    }
+
+    .form{
+     align-items: center;
+     justify-content: center;
+     }
+
+     .form input{
+      font-size: small;
+      margin-left: 25px;
+      width: 146px;
+      height: 33px;
+      margin-right: 25px;
+     }
+     .form button{
+     font-size: medium;
+     margin-right: 20px;
+     }
+
+     .btn{
+       height: 35px;
+     }
+}
+
+
+@media screen
+  and (min-device-width: 768px)
+  and (max-device-height: 1024px) {
+    .card-deck{
+      /* flex-direction: column; */
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      /* justify-content: center; */
+      padding: 5px;
+      margin: 16px;
+      width:300px;
+      height: 350px;
+    }
+    .sc{
+     font-size: 17px;
+     font-weight: bold;
+    }
+
+    .form{
+     align-items: center;
+     justify-content: center;
+     }
+
+     .form input{
+      font-size: small;
+      margin-left: 25px;
+      width: 146px;
+      height: 33px;
+      margin-right: 25px;
+     }
+     .form button{
+     font-size: medium;
+     margin-right: 20px;
+     }
+
+     .btn{
+       height: 35px;
+     }
+}
+
+.error{
+  color: red !important;
+  font-weight: bold;
+  text-align: center;
+}
